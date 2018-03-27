@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Enoch Paintball</title>
+
+  <link rel="stylesheet" href="vendor/ionic/css/ionic.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="stylesheets/application.css" />
+  <link rel="stylesheet" href="stylesheets/app.css" />
+  <link rel="stylesheet" href="components/ion-rangeslider/css/ion.rangeSlider.css" />
+  <link rel="stylesheet" href="components/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css" />
+
+  <script src="cordova.js"></script> 
+  <script src="components/angular/angular.js"></script>
+  <script src="components/steroids-js/steroids.js"></script>
+  <script src="components/steroids-data/dist/steroids.data.js"></script>
+
+<!--   <script src="components/lodash/dist/lodash.js"></script> -->
+  <script src="components/jquery/jquery.js"></script>
+  <script src="components/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+  
+  <script src="javascripts/index.js"></script>
+  <script src="javascripts/application.js"></script>
+  <script src="components/Chart.min.js"></script>
+  <script src="components/Chart.Scatter.min.js"></script>
+  <script src="javascripts/sliders.js"></script>
+  <script src="javascripts/shotGraph.js"></script>
+  <script src="components/cordova-ble/ble.js"></script>
+
+
+  <script src="models/models.js"></script>
+
+  <script src="controllers/application.js"></script>
+  <script src="controllers/Connection.js"></script>
+</head>
+<body ng-app="enochAppApp" class="content">
+    
+    <div id="wrapper">
+<div id = "header" class="bar bar-header bar-light">
+<button id="logoButton" class="button button-clear"></button>
+  <h1 id="title" class="title">Enoch Paintball</h1>
+<button id="bleButton" class="button button-clear"></button>
+</div>
+  <div ng-controller="ConnectionCtrl" id="Connection">
+    <div id="connectTab" style="display:block;">
+
+
+        <div id="boardType" class="list"  style="display:none;" >
+
+          <label class="item item-input item-select item-balanced">
+            <div class="input-label label-black">
+              Board Type
+            </div>
+            <select id='boardListSelect' ng-model="boardList"  ng-options="k as v for (k,v) in boards" ng-change="boardChange()" >   
+                <option value="" ng-if="false"></option>
+            </select>
+          </label>
+
+        </div>
+
+        <div id="bleType" class="list"  style="display:block;" >
+
+          <label class="item item-input item-select item-balanced ion-bluetooth icon-left">
+            <div class="input-label label-black" >
+              BLE Type
+            </div>
+            <select id='bleListSelect' ng-model="bleList"  ng-options="k as v for (k,v) in bles" ng-change="bleChange()" >   
+                <option value="" ng-if="false"></option>
+            </select>
+          </label>
+
+        </div>
+        
+        <div id="blelInit" ng-click="blelInitTap()">
+            <button class="button button-positive ion-bluetooth icon-left">
+                Scan for Devices
+            </button>
+        </div>
+
+<!--        <div id="refreshButton" ng-click="refreshButtonTap()">
+            <button class="button button-small button-balanced ion-refresh icon-left">
+                Refresh Device List 
+            </button>
+        </div>-->
+        <div id="text5" ng-click="text5Tap()">
+            <p class="lead">
+                Click Result Below to Connect
+            </p>
+        </div>
+
+        <div id="mainPage">
+            <ul id="deviceList">                    
+            </ul>
+        </div>
+        <div id="detailPage">
+            <div id="resultDiv"></div>
+
+        </div>            
+
+
+       
+
+        <div id="getDataButton" ng-click="getDataTap()" style="display:none;">
+            <button class="button button-calm ion-code-download icon-right">
+                Load Data from Board
+            </button>
+        </div>
+
+        <div id="disconnectButton" ng-click="disconnectButtonTap()">
+            <button class="button button-assertive ion-bluetooth icon-left">
+                Disconnect
+            </button>
+        </div>
+
+        <div id="exitButton" ng-click="exitButtonTap()">
+            <button class="button button-dark ion-close-circled icon-right">
+                Exit
+            </button>
+        </div>
+        <div id="testButton" ng-click="testButtonTap()"   >
+            <button class="button button-calm ion-close-circled icon-right">
+                Load Test Data
+            </button>
+        </div>
+
+    </div>
+
+    <div id="configTab" style="display:none;" >
+        <div id="fireTab" style="display:block;">
+
+            <div id="FireModeContainer" ng-click="FireModeContainerTap()">
+                
+                    <div>
+                        <div class="labelouter">
+                            <label class="labelinner" for="FireModename">Fire Mode</label>
+                        </div>
+                        <input type="text"  id="FireModeid" name="FireModename" value="" />
+                    </div>
+                    
+                
+            </div>
+
+            <div id="RampMinShotsContainer" ng-click="RampMinShotsContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                        <div class="labelouter">
+                            <label class="labelinner" for="RampMinShotsname">Ramp Min Shots</label>
+                        </div>
+                        <input type="text" class="js-range-slider" id="RampMinShotsid" name="RampMinShotsname" value="" />
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="RampMinShotsInputid" value="" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="RampMinBPSContainer" ng-click="RampMinBPSContainerTap()">
+                 <div class="sliderCombo">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="RampMinBPSname">Ramp Min BPS</label>
+                    </div>
+                    <input type="text" class="js-range-slider" id="RampMinBPSid" name="RampMinBPSname" value="" />
+                </div>
+                     <div class="extra-controls">
+                            <input type="text" class="js-input"  id="RampMinBPSInputid" value="" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="RampInactiveTimeContainer" ng-click="RampInactiveTimeContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="RampInactiveTimename">Ramp Inactive Time</label>
+                    </div>
+                    <input type="text" id="RampInactiveTimeid" name="RampInactiveTimename" value="" />
+                </div>
+
+            </div>
+
+            <div id="ROFonOffContainer" ng-click="ROFonOffContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="ROFonOffname">ROF Off/On</label>
+                    </div>
+                    <input type="text" id="ROFonOffid" name="ROFonOffname" value="" />
+                </div>
+
+            </div>
+
+            <div id="ReactiveonOffContainer" ng-click="ReactiveonOffContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="ReactiveonOffname">Reactive Off/On</label>
+                    </div>
+                    <input type="text" id="ReactiveonOffid" name="ReactiveonOffname" value="" />
+                </div>
+
+            </div>
+        </div>
+        <div id="eyeTab" style="display:none;">
+
+            <div id="EyesOnROFContainer" ng-click="EyesOnROFContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="EyesOnROFname">Eyes ON ROF</label>
+                    </div>
+                    <input type="text" id="EyesOnROFid" name="EyesOnROFname" value="" />
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="EyesOnROFInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="EyesOffROFContainer" ng-click="EyesOffROFContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="EyesOffROFname">Eyes OFF ROF</label>
+                    </div>
+                    <input type="text" id="EyesOffROFid" name="EyesOffROFname" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="EyesOffROFInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="EyeSensitivityContainer" ng-click="EyeSensitivityContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="EyeSensitivityname">Eye Sensitivity</label>
+                    </div>
+                    <input type="text" id="EyeSensitivityid" name="EyeSensitivityname" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="EyeSensitivityInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+            
+            <div id="AceDebounceContainer" ng-click="AceDebounceContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="AceDebouncename">Ace Debounce</label>
+                    </div>
+                    <input type="text" id="AceDebounceid" name="AceDebouncename" value="" />
+                </div>
+
+            </div>
+
+            <div id="EyeModeContainer" ng-click="EyeModeContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="EyeModename">Eyes Mode</label>
+                    </div>
+                    <input type="text" id="EyeModeid" name="EyeModename" value="" />
+                </div>
+
+            </div>
+
+        </div>
+        <div id="markerTab" style="display:none;">
+            <div id="openBoltContainer">
+                <div id="DwellContainer" ng-click="DwellContainerTap()">
+                    <div class="sliderCombo">
+                    <div>
+                        <div class="labelouter">
+                            <label class="labelinner" for="Dwellname">Dwell</label>
+                        </div>
+                        <input type="text" id="Dwellid" name="Dwellname" value="" />
+                    
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="DwellInputid" value="" />
+                    </div>
+                </div>
+
+                </div>
+            </div>
+             <div id="closedBoltContainer" style="display:none;">
+
+            <div id="SearOnTimeContainer" ng-click="SearOnTimeContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="SearOnTimename">Sear On Time</label>
+                    </div>
+                    <input type="text" id="SearOnTimeid" name="SearOnTimename" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="SearOnTimeInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="OpenDelayContainer" ng-click="OpenDelayContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="OpenDelayname">Open Delay</label>
+                    </div>
+                    <input type="text" id="OpenDelayid" name="OpenDelayname" value="" />
+                
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="OpenDelayInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+<!--            <div id="OpenCycleContainer" ng-click="OpenCycleContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="OpenCyclename">Open Cycle</label>
+                    </div>
+                    <input type="text" id="OpenCycleid" name="OpenCyclename" value="" />
+                </div>
+
+            </div>
+
+            <div id="BallInPlaceContainer" ng-click="BallInPlaceContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="BallInPlacename">Ball In Place</label>
+                    </div>
+                    <input type="text" id="BallInPlaceid" name="BallInPlacename" value="" />
+                </div>
+
+            </div>-->
+            <div id="PumpOnTimeContainer" ng-click="PumpOnTimeContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="PumpOnTimename">Pump On Time</label>
+                    </div>
+                    <input type="text" id="PumpOnTimeid" name="PumpOnTimename" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="PumpOnTimeInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="CloseTimeContainer" ng-click="CloseTimeContainerTap()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="CloseTimename">Close Time</label>
+                    </div>
+                    <input type="text" id="CloseTimeid" name="CloseTimename" value="" />
+                 </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="CloseTimeInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="WatchTimeContainer" ng-click="WatchTimeContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="WatchTimename">Watch Time</label>
+                    </div>
+                    <input type="text" id="WatchTimeid" name="WatchTimename" value="" />
+                </div>
+
+            </div>
+
+        </div>
+            <div id="FSDOContainer" ng-click="FSDOContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="FSDOname">First Shot Drop Off</label>
+                    </div>
+                    <input type="text" id="FSDOid" name="FSDOname" value="" />
+                </div>
+
+            </div>
+
+            <div id="DwellRamponOffContainer" ng-click="DwellRamponOffContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRamponOffname">Dwell Ramp Off/On</label>
+                    </div>
+                    <input type="text" id="DwellRamponOffid" name="DwellRamponOffname" value="" />
+                </div>
+
+            </div>
+
+            <div id="DwellRampThresholdContainer" ng-click="DwellRampThresholdContainerTap()">
+                 <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRampThresholdname">Dwell Ramp Threshold</label>
+                    </div>
+                    <input type="text" id="DwellRampThresholdid" name="DwellRampThresholdname" value="" />
+                
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="DwellRampThresholdInputid" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="DwellRampRateContainer" ng-click="DwellRampRateContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRampRatename">Dwell Ramp Rate</label>
+                    </div>
+                    <input type="text" id="DwellRampRateid" name="DwellRampRatename" value="" />
+                </div>
+
+            </div>
+
+            <div id="DebounceContainer" ng-click="DebounceContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="Debouncename">Debounce</label>
+                    </div>
+                    <input type="text" id="Debounceid" name="Debouncename" value="" />
+                </div>
+
+            </div>
+
+            <div id="MechDebounceContainer" ng-click="MechDebounceContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="MechDebouncename">Mechanical Debounce</label>
+                    </div>
+                    <input type="text" id="MechDebounceid" name="MechDebouncename" value="" />
+                </div>
+
+            </div>
+
+            <div id="DebounceModeContainer" ng-click="DebounceModeContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DebounceModename">Debounce Mode</label>
+                    </div>
+                    <input type="text" id="DebounceModeid" name="DebounceModename" value="" />
+                </div>
+
+            </div>
+
+            <div id="LoaderDelayContainer" ng-click="LoaderDelayContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="LoaderDelayname">Loader Delay</label>
+                    </div>
+                    <input type="text" id="LoaderDelayid" name="LoaderDelayname" value="" />
+                </div>
+
+            </div>
+
+            <div id="BoardModeContainer" ng-click="BoardModeContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="BoardModename">Board Mode</label>
+                    </div>
+                    <input type="text" id="BoardModeid" name="BoardModename" value="" />
+                </div>
+
+            </div>
+            
+             <div id="ContrastContainer" ng-click="ContrastContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="Contrastname">Contrast</label>
+                    </div>
+                    <input type="text" id="Contrastid" name="Contrastname" value="" />
+                </div>
+
+            </div>
+            
+            <div id="PowerSaveContainer" ng-click="PowerSaveContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="PowerSavename">Sleep</label>
+                    </div>
+                    <input type="text" id="PowerSaveid" name="PowerSavename" value="" />
+                </div>
+
+            </div>
+
+        </div>
+       
+        <div id="timersTab" style="display:none;">
+
+            <div id="GameTimerContainer" ng-click="GameTimeronOffContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="GameTimeronOffname">Game Timer Off/On</label>
+                    </div>
+                    <input type="text" id="GameTimeronOffid" name="GameTimeronOffname" value="" />
+                </div>
+
+            </div>
+
+            <div id="GameTimerMinutesContainer" ng-click="GameTimerMinutesContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="GameTimerMinutesname">Game Timer Minutes</label>
+                    </div>
+                    <input type="text" id="GameTimerMinutesid" name="GameTimerMinutesname" value="" />
+                </div>
+
+            </div>
+
+            <div id="GameTimerSecondsContainer" ng-click="GameTimerSecondsContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="GameTimerSecondsname">Game Timer Seconds</label>
+                    </div>
+                    <input type="text" id="GameTimerSecondsid" name="GameTimerSecondsname" value="" />
+                </div>
+
+            </div>
+
+<!--            <div id="SleepTimeoutContainer" ng-click="SleepTimeoutContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="SleepTimeoutname">Sleep Timeout</label>
+                    </div>
+                    <input type="text" id="SleepTimeoutid" name="SleepTimeoutname" value="" />
+                </div>
+
+            </div>-->
+
+ 
+
+        </div>
+        <div id="profileTab" style="display:none;">
+            
+            <div id="splashType" class="list"  >
+                <label class="item item-input item-select item-balanced">
+                    <div class="input-label label-black">
+                       Splash Logo
+                    </div>
+                    <select id='splashListSelect' ng-model="splashList"  ng-options="k as v for (k,v) in splash" ng-change="splashChange()" >   
+                    <option value="" ng-if="false"></option>
+                    </select>
+                </label> 
+            </div>    
+            
+            <div id="ProfileSaveContainer" ng-click="ProfileSaveContainerTap()">
+                <div>
+                    <input type="text" id="ProfileSaveid" name="ProfileSavename" value="" />
+                </div>
+
+            </div>
+
+            <div id="SaveProfileButton" ng-click="SaveProfileButtonTap()">
+                <button class="button button-positive">
+                    Save Current Settings to Profile
+                </button>
+            </div>
+
+
+            <div class="item item-divider" style="background-color:black;border-color: black;">
+
+            </div>
+
+
+            <div id="ProfileLoadContainer" ng-click="ProfileLoadContainerTap()">
+                <div>
+                    <input type="text" id="ProfileLoadid" name="ProfileLoadname" value="" />
+                </div>
+
+            </div>
+
+            <div id="button5" ng-click="LoadProfileButtonTap()">
+                <button class="button button-assertive">
+                    Load Profile
+                </button>
+            </div>
+            
+<!--            <div id="SplashContainer" ng-click="SplashContainerTap()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="Splashname">Splash Logo</label>
+                    </div>
+                    <input type="text" id="Splashid" name="Splashname" value="" />
+                </div>
+
+            </div>-->
+
+        </div>
+    </div>
+
+    <div id="tuningTab" style="display:none;">
+         <div id="text4" ng-click="text4Tap()">
+            <p class="lead">
+                Click to Load Last Shot data.  The shot graph will then appear or update.
+            </p>
+        </div>
+                 
+        <div id="loadCBshot" ng-click="cbShotLoader()" style="display:none;">
+            <button class="button button-calm ion-code-download">
+                Load CB Test Shot
+            </button>
+        </div>
+        <div id="loadOBshot" ng-click="obShotLoader()" style="display:none;">
+            <button class="button button-calm ion-code-download">
+                Load OB Test Shot
+            </button>
+        </div>
+        <div id="loadShot" ng-click="shotLoader()" >
+            <button class="button button-calm ion-code-download">
+                Load Last Shot
+            </button>
+        </div>
+<!--         <div id="TuningContainer" ng-click="TuningonOffContainerTap()">
+            <div>
+                <div class="labelouter">
+                    <label class="labelinner" for="TuningonOffname">Tuning Off/On</label>
+                </div>
+                <input type="text" id="TuningonOffid" name="TuningonOffname" value="" />
+            </div>
+
+        </div>-->
+   
+
+       
+
+       
+        <div id="shotCb" style="display:none;">
+          
+        <div id="shotGraphContainerCB" ng-click="shotGraphTap()">
+            <div>
+                <canvas id="shotGraphCB"></canvas>
+            </div>
+        </div>
+        
+            <div id="shotTextContainerCB" >
+                <table>
+                    <tr>
+                        <th class="shotTr">Setting</th>
+                        <th class="shotTr">Observed (ms)</th>
+                        <th class="shotTr">Registry (ms)</th>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Seer On Time</td>
+                        <td class="shotTr" id='sotObs'>1</td>
+                        <td class="shotTr" id='sotReg'>1</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Open Delay</td>
+                        <td class="shotTr" id='odObs'>1</td>
+                        <td class="shotTr" id='odReg'>1</td>
+                    </tr>
+<!--                    <tr>
+                        <td class="shotTr">Open Cycle</td>
+                        <td class="shotTr" id='ocObs'>1</td>
+                        <td class="shotTr" id='ocReg'>1</td>
+                    </tr>
+-->                    <tr>
+                        <td class="shotTr">Pump on Time</td>
+                        <td class="shotTr" id='potObs'>1</td>
+                        <td class="shotTr" id='potReg'>1</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Close Time</td>
+                        <td class="shotTr" id='ctObs'>1</td>
+                        <td class="shotTr" id='ctReg'>1</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Watch Time</td>
+                        <td class="shotTr" id='wtObs'>1</td>
+                        <td class="shotTr" id='wtReg'>1</td>
+                    </tr>
+
+                </table>
+            </div>  
+          
+            
+            <div id="SearOnTimeContainer2" ng-click="SearOnTimeContainerTap2()">
+                 <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="SearOnTimename2">Sear On Time</label>
+                    </div>
+                    <input type="text" id="SearOnTimeid2" name="SearOnTimename2" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="SearOnTimeInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="OpenDelayContainer2" ng-click="OpenDelayContainerTap2()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="OpenDelayname2">Open Delay</label>
+                    </div>
+                    <input type="text" id="OpenDelayid2" name="OpenDelayname2" value="" />
+                
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="OpenDelayInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+<!--            <div id="OpenCycleContainer2" ng-click="OpenCycleContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="OpenCyclename2">Open Cycle</label>
+                    </div>
+                    <input type="text" id="OpenCycleid2" name="OpenCyclename2" value="" />
+                </div>
+
+            </div>
+
+            <div id="BallInPlaceContainer2" ng-click="BallInPlaceContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="BallInPlacename2">Ball In Place</label>
+                    </div>
+                    <input type="text" id="BallInPlaceid2" name="BallInPlacename2" value="" />
+                </div>
+
+            </div>-->
+            <div id="PumpOnTimeContainer2" ng-click="PumpOnTimeContainerTap2()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="PumpOnTimename2">Pump On Time</label>
+                    </div>
+                    <input type="text" id="PumpOnTimeid2" name="PumpOnTimename2" value="" />
+                 </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="PumpOnTimeInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="CloseTimeContainer2" ng-click="CloseTimeContainerTap2()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="CloseTimename2">Close Time</label>
+                    </div>
+                    <input type="text" id="CloseTimeid2" name="CloseTimename2" value="" />
+                </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="CloseTimeInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="WatchTimeContainer2" ng-click="WatchTimeContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="WatchTimename2">Watch Time</label>
+                    </div>
+                    <input type="text" id="WatchTimeid2" name="WatchTimename2" value="" />
+                </div>
+
+            </div> 
+        </div>
+        <div id="shotOb">
+            <div id="shotGraphContainerOB" ng-click="shotGraphTap()">
+            <div>
+                <canvas id="shotGraphOB"></canvas>
+            </div>
+        </div>
+     
+            <div id="shotTextContainerOB" >
+                <table>
+                    <tr>
+                        <th class="shotTr">Setting</th>
+                        <th class="shotTr">Observed (ms)</th>
+                        <th class="shotTr">Registry (ms)</th>
+                    </tr>
+                    <tr>
+                        <td class="shotTr" >FSDO Time</td>
+                        <td class="shotTr" id='FSDOObs'>0</td>
+                        <td class="shotTr" id='FSDOReg'>0</td>
+                    </tr> 
+                    <tr>
+                        <td class="shotTr" >Dwell Time</td>
+                        <td class="shotTr" id='dwellObs'>0</td>
+                        <td class="shotTr" id='dwellReg'>0</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr" >Dwell Ramp</td>
+                        <td class="shotTr" id='dwellRampObs'>0</td>
+                        <td class="shotTr" id='dwellRampReg'>0</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Loader Delay</td>
+                        <td class="shotTr" id='loaderDelayObs'>0</td>
+                        <td class="shotTr" id='loaderDelayReg'>0</td>
+                    </tr>
+                    <tr>
+                        <td class="shotTr">Total Dwell</td>
+                        <td class="shotTr" id='totalDwellObs' colspan="2">0</td>
+                    </tr>
+
+                </table>
+            </div>   
+            
+            <div id="openBoltContainer2">
+            <div id="DwellContainer2" ng-click="DwellContainerTap2()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="Dwellname2">Dwell</label>
+                    </div>
+                    <input type="text" id="Dwellid2" name="Dwellname2" value="" />
+                
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="DwellInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            
+             </div>
+            
+            <div id="LoaderDelayContainer2" ng-click="LoaderDelayContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="LoaderDelayname2">Loader Delay</label>
+                    </div>
+                    <input type="text" id="LoaderDelayid2" name="LoaderDelayname2" value="" />
+                </div>
+
+            </div>
+
+            <div id="FSDOContainer2" ng-click="FSDOContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="FSDOname2">FSDO</label>
+                    </div>
+                    <input type="text" id="FSDOid2" name="FSDOname2" value="" />
+                </div>
+
+            </div>
+
+            
+                    
+            <div id="DwellRamponOffContainer2" ng-click="DwellRamponOffContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRamponOffname2">Dwell Ramp Off/On</label>
+                    </div>
+                    <input type="text" id="DwellRamponOffid2" name="DwellRamponOffname2" value="" />
+                </div>
+
+            </div>
+
+            <div id="DwellRampThresholdContainer2" ng-click="DwellRampThresholdContainerTap2()">
+                <div class="sliderCombo">
+                    <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRampThresholdname2">Dwell Ramp Threshold</label>
+                    </div>
+                    <input type="text" id="DwellRampThresholdid2" name="DwellRampThresholdname2" value="" />
+                
+                    </div>
+                    <div class="extra-controls">
+                            <input type="text" class="js-input"  id="DwellRampThresholdInputid2" value="" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="DwellRampRateContainer2" ng-click="DwellRampRateContainerTap2()">
+                <div>
+                    <div class="labelouter">
+                        <label class="labelinner" for="DwellRampRatename2">Dwell Ramp Rate</label>
+                    </div>
+                    <input type="text" id="DwellRampRateid2" name="DwellRampRatename2" value="" />
+                </div>
+
+            </div>
+     <div id="BoardModeContainer2" ng-click="BoardModeContainerTap2()">
+            <div>
+                <div class="labelouter">
+                    <label class="labelinner" for="BoardModename2">Board Mode</label>
+                </div>
+                <input type="text" id="BoardModeid2" name="BoardModename2" value="" />
+            </div>
+
+        </div>
+          
+       
+    </div>
+    <div id="buttonsTab"  style="display:none;">
+
+        <div id="upButton" ng-click="upButtonTap()">
+            <button class="button ion-arrow-up-a button-large button-positive">
+                UP
+            </button>
+        </div>
+
+        <div id="selectButton" ng-click="selectButtonTap()">
+            <button class="button ion-checkmark-circled button-large button-assertive">
+                SELECT
+            </button>
+        </div>
+
+        <div id="downButton" ng-click="downButtonTap()">
+            <button class="button ion-arrow-down-a button-large button-positive">
+                DOWN
+            </button>
+        </div>
+
+    </div>
+
+    <div id="aboutTab"  style="display:none;"   >
+
+        <div id="helpButton" ng-click="helpButtonTap()">
+            <button class="button button-positive ion-home icon-right">
+                Help
+            </button>
+        </div>
+
+        <div id="LicenseButton" ng-click="LicenseButtonTap()">
+            <button class="button button-small ion-clipboard button-royal">
+                License 
+            </button>
+        </div>
+
+        <div id="TotalShotsContainer" ng-click="TotalShotsContainerTap()">
+            <div class="list">
+                <label class="item item-input">
+                    <div class="input-label"><strong>Total Shots</strong></div>
+                    <p id="totalShots">0</p>
+                </label>
+            </div>
+
+        </div>
+
+        <div id="ApplicationVersionContainer" ng-click="ApplicationVersionContainerTap()">
+            <div class="list">
+                <label class="item item-input">
+                    <div class="input-label"><strong>Application Version</strong></div>
+                    <p id="appVersion">v1.0.3</p>
+                </label>
+            </div>
+
+        </div>
+
+        <div id="BoardFirmwareVersionContainer" ng-click="BoardFirmwareVersionContainerTap()">
+            <div class="list">
+                <label class="item item-input">
+                    <div class="input-label"><strong>Board Firmware Version</strong></div>
+                    <p id="firmwareVersion">v1.0.1</p>
+                </label>
+            </div>
+
+        </div>
+
+        <div id="resetButton" ng-click="ResetButtonTap()">
+            <button class="button button-small ion-nuclear button-assertive">
+                Reset 
+            </button>
+        </div>
+    </div>
+
+    <div id="resetTab" style="display:none;" >
+
+        <div id="resetcheckbox" ng-click="resetcheckboxTap()">
+            <ul class="list">
+                <li class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="checkbox2.value">
+                    </label>
+                    Check to Confirm Reset
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="resetButtonFinal" ng-click="resetButtonFinalTap()">
+            <button class="button button-small ion-nuclear button-assertive">
+                Reset  
+            </button>
+        </div>
+
+        <div id="Reset" ng-click="ResetTap()">
+            <p class="warn">
+                This will reset your board back to factory settings.  <br>
+            </p>
+            <p><br></p>
+            <p class="warn">
+                Profiles should not be lost. <br>
+            </p>
+            <p><br></p>
+            <p class="warn2">
+                This CANNOT be undone.
+            </p>
+        </div>
+
+    </div>
+
+    <div id="subfooter" class="bar bar-subfooter" style="display:none;">
+        <div class="button-bar">
+            <button id="fireButton" class="button icon ion-pinpoint button-energized" ng-click="fireTap()"></button>
+            <button id="eyeButton" class="button icon ion-eye button-calm" ng-click="eyeTap()"></button>
+            <button id="markerButton" class="button icon ion-edit button-calm" ng-click="markerTap()"></button>
+            <button id="timersButton" class="button icon ion-clock button-calm" ng-click="timersTap()"></button>   
+            <button id="profileButton" class="button icon ion-person-stalker button-calm" ng-click="profileTap()"></button>
+        </div>
+    </div>
+    <div id="footer" class="bar bar-footer">
+        <div class="button-bar">
+            <button id="connectButton" class="button icon ion-bluetooth button-balanced" ng-click="connectTap()"></button>
+            <button id="configButton" class="button icon ion-settings button-positive" ng-click="configTap()"></button>
+            <button id="tuningButton" class="button icon ion-stats-bars button-positive" ng-click="tuningTap()"></button>
+            <button id="buttonsButton" class="button icon ion-arrow-move button-positive" ng-click="buttonsTap()"></button>
+            <button id="aboutButton" class="button icon ion-lightbulb button-positive" ng-click="aboutTap()"></button>
+        </div>
+    </div>
+
+</div>
+
+
+
+</div>
+    
+</body>
+</html>

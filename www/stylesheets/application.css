@@ -1,0 +1,3398 @@
+
+/* Begin CSS for Connection */
+@media (max-device-width: 1024px) {
+    #Connection {
+
+  max-height: 1024px !important;
+  
+
+}
+}
+#Connection {
+
+  min-height: 480px;
+  max-height:480px;
+
+  overflow-y: auto;
+
+}
+
+/*.range-slider {
+    height: 80px;
+   display:flex;
+    flex-direction:column;
+    width:80%;
+
+}
+*/
+.extra-controls {
+
+            display: table;
+  margin: 0 auto;
+    width:70px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.js-input{
+   
+            text-align: center;
+ 
+  -moz-border-radius: 15px;
+ border-radius: 15px;
+    border:solid 1px black;
+    padding:5px;
+
+}
+
+
+#Connection #picture_field8 {
+
+/*  margin-top: 10px;
+
+  margin-right: 40px;
+
+  margin-bottom: 10px;
+
+  margin-left: 40px;*/
+
+  z-index: 1;
+
+}
+
+#Connection #picture_field8 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 25%;
+  
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+#Connection #blelInit {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 13;
+
+}
+#Connection #blelInit > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+ width: 100%;
+text-align: center;
+
+}
+
+#Connection #boardType {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 13;
+
+}
+#Connection #boardType > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+ width: 100%;
+text-align: center;
+
+}#Connection #bleType {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 13;
+
+}
+#Connection #bleType > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+ width: 100%;
+text-align: center;
+
+}
+
+#Connection #refreshButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 12;
+
+}
+#Connection #refreshButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #deviceList {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 8;
+
+}
+#Connection #deviceList > * {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #detailPage {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 8;
+
+}
+#Connection #detailPage > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #text5 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #text5 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #disconnectButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 11;
+
+}
+#Connection #disconnectButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+#Connection #exitButton {
+
+  margin-top: 20px;
+
+  margin-right: 80px;
+
+  margin-bottom: 10px;
+
+  margin-left: 80px;
+
+  z-index: 11;
+
+}
+#Connection #exitButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+ // bottom: 20px;
+
+}
+
+#Connection #testButton {
+
+  margin-top: 20px;
+
+  margin-right: 80px;
+
+  margin-bottom: 10px;
+
+  margin-left: 80px;
+
+  z-index: 11;
+
+}
+#Connection #testButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+ // bottom: 20px;
+
+}
+
+
+#Connection #getDataButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 11;
+
+}
+#Connection #getDataButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for Connection */
+
+/* Begin CSS for MainConfigMenu */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #FireSettingsList {
+
+  margin-top: 5px;
+  
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 10;
+
+}
+#Connection #FireSettingsList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #EyeSettingsList {
+
+  margin-top: 5px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 9;
+
+}
+#Connection #EyeSettingsList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #MarkerSettingsList {
+
+  margin-top: 5px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 8;
+
+}
+#Connection #MarkerSettingsList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ClosedBoltList {
+
+  margin-top: 5px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 7;
+
+}
+#Connection #ClosedBoltList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ConnectionList {
+
+  margin-top: 5px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #ConnectionList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ConnectionList {
+
+  margin-top: 5px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 5;
+
+}
+#Connection #ConnectionList > *:first-child {
+
+  padding-top: 5px;
+
+  padding-right: 10px;
+
+  padding-bottom: 5px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for MainConfigMenu */
+
+/* Begin CSS for FireSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #FireSettingsTitle {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+#Connection #FireSettingsTitle > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #FireModeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #FireModeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #RampMinShotsContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #RampMinShotsContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #RampMinBPSContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #RampMinBPSContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #RampInactiveTimeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #RampInactiveTimeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/*#Connection #rofOnOffToggle {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 5;
+
+}
+#Connection #rofOnOffToggle > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}*/
+
+/*#Connection #reactiveOnOffToggle {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #reactiveOnOffToggle > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}*/
+
+
+/* End CSS for FireSettings */
+
+/* Begin CSS for EyeSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title4 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #title4 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #EyesOnROFContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #EyesOnROFContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #EyesOffROFContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #EyesOffROFContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #EyeSensitivityContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 4;
+
+}
+#Connection #EyeSensitivityContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #AceDebounceContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 4;
+
+}
+#Connection #AceDebounceContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #SplashContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #SplashContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+#Connection #EyeModeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #EyeModeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for EyeSettings */
+
+/* Begin CSS for MarkerSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 7;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DwellContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #DwellContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DwellContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #DwellContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #FSDOContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #FSDOContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #FSDOContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #FSDOContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #list_item2 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 5;
+
+}
+#Connection #list_item2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #list_item3 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #list_item3 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #LoaderDelayContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #LoaderDelayContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+#Connection #LoaderDelayContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #LoaderDelayContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #BoardModeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #BoardModeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #BoardModeContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #BoardModeContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+/* End CSS for MarkerSettings */
+
+/* Begin CSS for ShotTuning */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 7;
+
+}
+
+
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #BoardMode2Container {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #BoardMode2Container > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #dwellRampOnOff {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+  
+  z-index: 6;
+
+}
+#Connection #dwellRampOnOff > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+  
+  #Connection #DwellRamponOffContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #DwellRamponOffContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+  #Connection #DwellRampThresholdContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #DwellRampThresholdContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+  #Connection #DwellRampRateContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #DwellRampRateContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #text4 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+
+#Connection #text4 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #shotGraphCB {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 0;
+
+}
+#Connection #shotGraphCB > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}#Connection #shotGraphOB {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 0;
+
+}
+#Connection #shotGraphOB > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection  #shotTextContainer{
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 20px;
+
+  z-index: 0;
+
+}
+.shotTr{
+  width: 25%;
+  text-align: left;
+}
+
+
+/* End CSS for ShotTuning */
+
+/* Begin CSS for DwellRampSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+/*#Connection #toggle1 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #toggle1 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}*/
+
+#Connection #DwellRampThresholdContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #DwellRampThresholdContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DwellRampRateContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #DwellRampRateContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for DwellRampSettings */
+
+/* Begin CSS for DebounceSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DebounceContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #DebounceContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #MechDebounceContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #MechDebounceContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DebounceModeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #DebounceModeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for DebounceSettings */
+
+/* Begin CSS for About */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #Connection Title {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 10;
+
+}
+#Connection #About Title > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #helpButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+#Connection #helpButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #LicenseButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #LicenseButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+  font-size: 120%;
+
+}
+
+#Connection #TotalShotsContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 0;
+
+}
+#Connection #TotalShotsContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ApplicationVersionContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 1;
+
+}
+#Connection #ApplicationVersionContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #BoardFirmwareVersionContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #BoardFirmwareVersionContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #Connection Button {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 9;
+
+}
+#Connection #Connection Button > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for About */
+
+/* Begin CSS for Reset */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 4;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #checkbox2 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #checkbox2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #resetcheckbox {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 30px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #resetcheckbox > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 30px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #resetButton {
+
+  margin-top: 20px;
+
+  margin-right: 60px;
+
+  margin-bottom: 20px;
+
+  margin-left: 60px;
+
+  z-index: 1;
+
+}
+#Connection #resetButton > *:first-child {
+
+  padding-top: 20px;
+
+  padding-right: 60px;
+
+  padding-bottom: 20px;
+
+  padding-left: 60px;
+
+  width: 100%;text-align: center;
+
+  font-size: x-large;
+}
+
+#Connection #resetButtonFinal {
+
+  margin-top: 20px;
+
+  margin-right: 60px;
+
+  margin-bottom: 20px;
+
+  margin-left: 60px;
+
+  z-index: 1;
+
+}
+#Connection #resetButtonFinal > *:first-child {
+
+  padding-top: 20px;
+
+  padding-right: 60px;
+
+  padding-bottom: 20px;
+
+  padding-left: 60px;
+
+  width: 100%;text-align: center;
+
+  font-size: x-large;
+}
+
+#Connection #Connection {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 0;
+
+}
+#Connection #Connection > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for Reset */
+
+/* Begin CSS for Profiles */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 7;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ProfileSaveContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 6;
+
+}
+#Connection #ProfileSaveContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #SaveProfileButton {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 5;
+
+}
+#Connection #SaveProfileButton > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 10px;
+
+  padding-bottom: 0px;
+
+  padding-left: 10px;
+
+  width: 100%;
+
+}
+
+#Connection #list_divider5 {
+
+  margin-top: 10px;
+
+  margin-right: 0px;
+
+  margin-bottom: 10px;
+
+  margin-left: 0px;
+
+  z-index: 0;
+
+}
+#Connection #list_divider5 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 0px;
+
+  padding-bottom: 10px;
+
+  padding-left: 0px;
+
+  width: 100%;
+
+}
+
+#Connection #ProfileLoadContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 3;
+
+}
+#Connection #ProfileLoadContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #button5 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #button5 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 10px;
+
+  padding-bottom: 0px;
+
+  padding-left: 10px;
+
+  width: 100%;
+
+}
+
+/* End CSS for Profiles */
+
+/* Begin CSS for Timers */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 11;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #GameTimerOnOffContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #GameTimerOnOffContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #SleepTimeoutContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+  
+  z-index: 2;
+
+}
+#Connection #SleepTimeoutContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #PowerSaveContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #PowerSaveContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ContrastContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #ContrastContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+/* End CSS for Timers */
+
+/* Begin CSS for ClosedBoltSettings */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+
+#Connection #title0 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 12;
+
+}
+#Connection #title0 > *:first-child {
+
+  padding-top: 0px;
+
+  padding-right: 0px;
+
+  padding-bottom: 0px;
+
+  padding-left: 0px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #SearOnTimeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 4;
+
+}
+#Connection #SearOnTimeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #OpenDelayContainer {
+
+  margin-top: 10px;
+
+   margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #OpenDelayContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/*#Connection #OpenCycleContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #OpenCycleContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #BallInPlaceContainer {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 1;
+
+}
+#Connection #BallInPlaceContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}*/
+
+#Connection #PumpOnTimeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #PumpOnTimeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #CloseTimeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #CloseTimeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #WatchTimeContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #WatchTimeContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+  
+}
+
+#Connection #SearOnTimeContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 4;
+
+}
+#Connection #SearOnTimeContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #OpenDelayContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #OpenDelayContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/*#Connection #OpenCycleContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 2;
+
+}
+#Connection #OpenCycleContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #BallInPlaceContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 10px;
+
+  margin-bottom: 10px;
+
+  margin-left: 10px;
+
+  z-index: 1;
+
+}
+#Connection #BallInPlaceContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}*/
+
+#Connection #PumpOnTimeContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 3;
+
+}
+#Connection #PumpOnTimeContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #CloseTimeContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #CloseTimeContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #WatchTimeContainer2 {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #WatchTimeContainer2 > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}#Connection #GameTimerSecondsContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #GameTimerSecondsContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}#Connection #GameTimerMinutesContainer {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 6;
+
+}
+#Connection #GameTimerMinutesContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for ClosedBoltSettings */
+
+/* Begin CSS for Buttons */
+#Connection {
+
+  min-height: 480px;
+
+  overflow-y: auto;
+
+}
+
+#Connection #loadCBshot {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 20px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+#Connection #loadCBshot > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #loadOBshot{
+
+  margin-top: 20px;
+
+  margin-right: 70px;
+
+  margin-bottom: 20px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #loadOBshot > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #upButton {
+
+  margin-top: 10px;
+
+  margin-right: 70px;
+
+  margin-bottom: 20px;
+
+  margin-left: 70px;
+
+  z-index: 2;
+
+}
+
+#Connection #loadShot {
+
+  margin-top: 20px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #loadShot > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #upButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+
+#Connection #selectButton {
+
+  margin-top: 20px;
+
+  margin-right: 70px;
+
+  margin-bottom: 20px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #selectButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #downButton {
+
+  margin-top: 20px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 0;
+
+}
+#Connection #downButton > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 10px;
+
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ROFonOffContainer {
+
+  margin-top: 30px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #ROFonOffContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #ReactiveonOffContainer {
+
+  margin-top: 30px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #ReactiveonOffContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #DwellRamponOffContainer {
+
+  margin-top: 30px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #DwellRamponOffContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #GameTimerContainer {
+
+  margin-top: 30px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #GameTimerContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+#Connection #TuningContainer {
+
+  margin-top: 30px;
+
+  margin-right: 70px;
+
+  margin-bottom: 10px;
+
+  margin-left: 70px;
+
+  z-index: 1;
+
+}
+#Connection #TuningContainer > *:first-child {
+
+  padding-top: 10px;
+
+  padding-right: 30px;
+
+  padding-bottom: 10px;
+
+  padding-left: 30px;
+
+  width: 100%;text-align: center;
+
+}
+
+/* End CSS for Buttons */
+
+
+div#global-spinner-div {
+  display: none;
+}
+
+.global-blackout {
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+.global-modal-container {
+  z-index: 99999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.global-spinner-container {
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:50%;
+  left:50%;
+  margin:-50px 0 0 -50px;
+  background-color: #eee;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-box-pack: center;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-align: center;
+  -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.global-spinner-container .icon {
+  font-size: 40px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.warn{
+     font-size: x-large;
+    color: black;
+    text-align: center;
+}
+
+.warn2{
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button.button-assertive.activated {
+      border-color: #cc2311;
+      background-color: #cc2311;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+}
+
+.button.button-light.activated {
+      border-color: #ccc;
+      background-color: #fafafa;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+}
+
+.button.button-stable.activated {
+      border-color: #a2a2a2;
+      background-color: #e5e5e5;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+}
+
+.button.button-positive.activated {
+      border-color: #145fd7;
+      background-color: #145fd7;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+}
+
+  .button.button-calm.activated {
+      border-color: #1aacc3;
+      background-color: #1aacc3;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+  }
+  
+    .button.button-assertive.activated {
+      border-color: #cc2311;
+      background-color: #cc2311;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+    }
+    
+    .button.button-balanced.activated {
+      border-color: #498f24;
+      background-color: #498f24;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+    }
+    
+    .button.button-energized.activated {
+      border-color: #d39211;
+      background-color: #d39211;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+    }
+    
+        .button.button-royal.activated {
+      border-color: #552bdf;
+      background-color: #552bdf;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+        }
+        
+            .button.button-dark.activated {
+      border-color: #000;
+      background-color: #262626;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); 
+            }
+            
+            .label-white{
+                color:#FFF
+            }
+            
+            .label-black{
+                color:#000
+            }
+            
+            .irs-grid-pol small{
+                display:none;
+            }

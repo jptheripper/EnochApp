@@ -1,0 +1,61 @@
+@media (max-device-width: 1024px) {
+    #connectTab, #configTab, #tuningTab, #buttonsTab, #aboutTab {
+
+  max-height: 800px !important;
+padding-bottom: 100px;
+
+}
+}
+
+
+#connectTab, #configTab, #tuningTab, #buttonsTab, #aboutTab {
+
+  min-height: 480px;
+ max-height:480px;
+padding-bottom: 100px;
+padding-top: 50px;
+  overflow-y: scroll;
+    background-color: #000000 !important;
+        color:#ffffff;
+
+}
+
+#header { position: fixed; 
+          top: auto;
+          height:50px;
+  background-color: grey !important;
+  border-color: grey;
+        color:black;
+        z-index: 999;
+} 
+
+#title{
+      background-color: grey !important;
+        color:black;    
+        border-color: grey;
+        font-size: 24px;
+}
+#footer { position: fixed; 
+          top: auto;
+  background-color: #000000 !important;
+  
+        border-color: black;
+        color:#ffffff;
+        z-index: 999;
+} 
+#subfooter { position: fixed; top: auto; 
+  background-color: #000000 !important;
+  
+        border-color: black;
+        color:#ffffff;
+        z-index: 999;
+} 
+
+
+.labelouter {
+  width: 100%;
+  text-align: center;
+}
+.labelinner {
+  display: inline-block;
+}

@@ -1,0 +1,42 @@
+
+      body, html {
+        background-color: #000000 !important;
+        color:#ffffff;
+      }
+
+
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: HelveticaNeue;
+        background-color: #000000 !important;
+        color:#ffffff;
+      }
+
+      .tab-item {
+        font-family: HelveticaNeue;
+        background-color: #000000 !important;
+        color:#ffffff;
+      }
+
+      input, button, select, textarea {
+        font-family: HelveticaNeue;
+      }
+    
+#logoButton{
+    background: url("../icons/whitewings.png") no-repeat;
+width: 48px;        
+height: 48px;
+border: none;
+z-index: 999;
+padding:0;
+}
+
+#bleButton{
+    background: url("../icons/ble-unconnected.png") no-repeat;
+width: 48px;        
+height: 48px;
+border: none;
+z-index: 999;
+
+padding:0;
+}
+
